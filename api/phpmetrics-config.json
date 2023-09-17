@@ -1,0 +1,13 @@
+{
+  "includes": [
+    "src",
+  ],
+  "excludes": [
+    "tests"
+  ],
+  "extensions": [".php", ".php8"]
+  },
+  "report": {
+    "html": "report/metrics/"
+  }
+}

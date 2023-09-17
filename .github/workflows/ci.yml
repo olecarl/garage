@@ -63,6 +63,9 @@ jobs:
       -
         name: Doctrine Schema Validator
         run: docker compose exec -T php bin/console -e test doctrine:schema:validate
+      -
+        name: PHP Metrics Static Code Analyse
+        run: docker compose exec -T php vendor/bin/phpmetrics --plugins=symfony -c phpmetrics-config.json
   lint:
     name: Docker Lint
     runs-on: ubuntu-latest
