@@ -58,9 +58,6 @@ jobs:
         name: Run migrations
         run: docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
       -
-        name: Run PHPUnit
-        run: docker compose exec -T php bin/phpunit
-      -
         name: Codeception Test Suite
         run: docker compose exec -T php vendor/bin/codecept run -f
       -
