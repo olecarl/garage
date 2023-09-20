@@ -66,6 +66,9 @@ jobs:
       -
         name: PHP Metrics Static Code Analyse
         run: docker compose exec -T php vendor/bin/phpmetrics --plugins=symfony -c phpmetrics-config.json
+      -
+        name: Psalm Code Analyse
+        run: docker compose exec -T php vendor/bin/psalm
   lint:
     name: Docker Lint
     runs-on: ubuntu-latest
