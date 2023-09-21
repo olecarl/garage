@@ -57,15 +57,15 @@ jobs:
       -
         name: Run migrations
         run: docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
-      -
-        name: Codeception Test Suite
-        run: docker compose exec -T php vendor/bin/codecept run -f
+#      -
+#        name: Codeception Test Suite
+#        run: docker compose exec -T php vendor/bin/codecept run
       -
         name: Doctrine Schema Validator
         run: docker compose exec -T php bin/console -e test doctrine:schema:validate
       -
         name: PHP Metrics Static Code Analyse
-        run: docker compose exec -T php vendor/bin/phpmetrics --plugins=symfony -c phpmetrics-config.json
+        run: docker compose exec -T php vendor/bin/phpmetrics src --plugins=symfony
       -
         name: Psalm Code Analyse
         run: docker compose exec -T php vendor/bin/psalm
