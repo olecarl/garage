@@ -1,0 +1,35 @@
+api_platform:
+    title: Hello API Platform
+    description: 'Welcome to the Hello World API of APIs, powered by API Platform.'
+    version: 1.0.0
+    show_webby: true
+    formats:
+        jsonld: [ "application/ld+json" ]
+        json: [ "application/json" ]
+    error_formats:
+        jsonproblem: [ "application/problem+json" ]
+        jsonld: [ "application/ld+json" ] # Hydra error formats
+
+    # Swagger UI.
+    enable_swagger_ui: true
+    enable_swagger: true
+    enable_entrypoint: false
+    enable_docs: true
+    enable_profiler: true
+    swagger:
+        versions: [3]
+        api_keys:
+            JWT:
+                name: Authorization
+                type: header
+
+    defaults:
+        stateless: true
+        # pagination_maximum_items_per_page: 50
+        pagination_client_items_per_page: true
+        cache_headers:
+            vary: ['Content-Type', 'Authorization', 'Origin']
+
+    collection:
+        pagination:
+            items_per_page_parameter_name: items
